@@ -149,8 +149,8 @@ export default function ChatRoom() {
 
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gray-100 px-4 py-6">
-      <div className="bg-white shadow-xl rounded-2xl p-6 w-full max-w-2xl flex flex-col space-y-4">
+    <div className="min-h-screen md:flex md:items-center md:justify-center bg-white md:bg-gray-100 md:px-4 ms:py-6">
+      <div className="bg-white md:shadow-xl md:rounded-2xl p-4 md:p-6 w-full md:max-w-2xl flex flex-col space-y-4">
         <div className="flex justify-between items-center">
           <h2 className="text-base capitalize font-medium  text-gray-800">Hi 👋 {username}</h2>
           <button
@@ -162,7 +162,7 @@ export default function ChatRoom() {
           </button>
         </div>
 
-        <div className="border border-gray-300 rounded-xl p-4 h-80 overflow-y-auto bg-gray-50 space-y-2 text-sm">
+        <div className="border border-gray-300 rounded-xl p-2 md:p-4 h-[75vh] md:h-80 overflow-y-auto bg-gray-50 space-y-2 text-sm">
           {messages.map((m, i) => {
             if (m.sender === 'system') {
               return (
@@ -199,7 +199,7 @@ export default function ChatRoom() {
           <div ref={messagesEndRef} />
         </div>
 
-        <div className="flex items-start  gap-2 relative">
+        <div className="flex items-start gap-1 md:gap-2 relative">
           {/* Emoji Button */}
 
           {showEmojiPicker && (
@@ -211,7 +211,7 @@ export default function ChatRoom() {
             onClick={() => setShowEmojiPicker(!showEmojiPicker)}
             className="p-1  cursor-pointer rounded-md hover:bg-[#8759fc33]"
           >
-            {showEmojiPicker ? <IoClose size={24} className=' text-black' /> : <BsEmojiSmileFill size={24} className=' text-yellow-500' />}
+            {showEmojiPicker ? <IoClose  className=' text-black text-xl md:text-2xl'  /> : <BsEmojiSmileFill  className='text-xl md:text-2xl text-yellow-500' />}
           </button>
 
           {/* File Upload */}
@@ -224,7 +224,7 @@ export default function ChatRoom() {
           />
 
           <label htmlFor="imageUpload" className="p-1  cursor-pointer rounded-md hover:bg-[#8759fc33]">
-            <FaImage size={24} className=' text-black' />
+            <FaImage className='text-xl md:text-2xl text-black' />
           </label>
 
 
@@ -241,15 +241,15 @@ export default function ChatRoom() {
                 sendMessage();
               }
             }}
-            className="flex-grow px-4 py-2 max-h-[40] border border-gray-300 rounded-2xl focus:outline-none focus:ring-2 focus:ring-[#8759fc33]"
+            className="flex-grow text-base  px-4 p-1.5 md:py-2 max-h-[40] border border-gray-300 rounded-2xl focus:outline-none focus:ring-2 focus:ring-[#8759fc33]"
           />
 
           {/* Send Button */}
           <button
             onClick={sendMessage}
-            className=" text-white px-2 py-2  rounded-md cursor-pointer hover:bg-[#8759fc33] transition"
+            className=" text-white px-2 py-2 text-xl md:text-2xl rounded-md cursor-pointer hover:bg-[#8759fc33] transition"
           >
-            <IoSend size={24} className='text-[#8759fc]' />
+            <IoSend  className='text-[#8759fc]' />
           </button>
         </div>
       </div>
